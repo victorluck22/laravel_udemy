@@ -27,3 +27,8 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
+Route::get('/contact/{id}/{name}', function(int $id, string $name = '') {
+    echo 'We\'re Here, your Id is '.$id.' and your name is '.$name;
+});
+
+
