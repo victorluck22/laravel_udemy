@@ -7,6 +7,17 @@
     <title>About</title>
 </head>
 <body>
-    <h2>About Page</h2>
+    <h3>About Page</h3>
+    <ul>
+        <li>
+            <a href="/"> Home</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/contact">Contact</a>
+        </li>
+    </ul>
 </body>
 </html>
