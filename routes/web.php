@@ -3,6 +3,8 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +27,8 @@ Route::get('/', [HomeController::class, 'index'])->name('site.index');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('site.contact');
 
+Route::post('/contact', [ContactController::class, 'index'])->name('site.contact');
+
 Route::get('/about', [AboutController::class, 'index'])->name('site.about');
 
 Route::get('/login', function(){
@@ -37,24 +41,13 @@ Route::prefix('/app')->group(function(){
     Route::get('/clients', function(){
         return 'clients';
     })->name('app.clients');
-    Route::get('/suppliers', function(){
-        return 'suppliers';
-    })->name('app.suppliers');
+    Route::get('/suppliers', [SupplierController::class, 'index'])->name('app.suppliers');
     Route::get('/products', function(){
         return 'app.products';
     });
 });
 
-Route::get('/route1', function() {
-    echo 'Route 1';
-
-})->name('site.route1');
-
-Route::get('/route2', function() {
-    return redirect()->route('site.route1');
-})->name('site.route2');
-
-//Route::redirect('/route2', '/route1');
+Route::get('/testeroute/{p1}/{p2}', [TesteController::class, 'index'])->name('teste');
 
 Route::fallback(function(){
     echo 'Endereço inexistente. Clique <a href="'.route('site.index').'">aqui</a> para retornar a página inicial!';

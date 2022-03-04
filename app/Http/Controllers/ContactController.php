@@ -8,6 +8,9 @@ class ContactController extends Controller
 {
     public function index()
     {
-        echo view('site.contact');
+        /* echo "<pre>";
+        print_r($_POST);
+        echo "</pre>"; */
+        echo view('site.contact', ['tittle' => 'Contact Page']);
     }
 }

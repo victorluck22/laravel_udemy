@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
-</head>
-<body>
-    <h3>Contact Page</h3>
-    <ul>
-        <li>
-            <a href="/"> Home</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-        <li>
-            <a href="/contact">Contact</a>
-        </li>
-    </ul>
-</body>
-</html>
+@extends('site.layouts.main')
+
+@section('tittle', $tittle)
+@section('conteudo')
+
+    <div class="conteudo-pagina">
+        <div class="titulo-pagina">
+            <h1>Entre em contato conosco</h1>
+        </div>
+
+        <div class="informacao-pagina">
+            <div class="contato-principal">
+                @component('site.layouts._components.form_contact', ['class' => 'borda-preta'])
+                    <p>Our Team will read your message ASAP and return soon</p>
+                    <p>The time to answer is 48 Hours</p>
+                @endcomponent
+            </div>
+        </div>
+    </div>
+
+@endsection
